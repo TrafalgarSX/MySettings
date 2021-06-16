@@ -1,0 +1,29 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = boss_guo
+	email = 1148636359g@gmail.com
+[alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[aliaa]
+	last = log -l HEAD
+[core]
+	quotePath = false
+	editor = nvim-qt
+[gui]
+	encoding = utf-8
+[i18n "commit"]
+	encoding = utf-8
+[i18n]
+	logoutputencoding = utf-8
+[credential]
+	helper = wincred
+[http]
+	proxy = socks5://127.0.0.1:7890
+[https]
+	proxy = socks5://127.0.0.1:7890
+

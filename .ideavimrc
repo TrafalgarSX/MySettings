@@ -1,0 +1,74 @@
+
+"设置leader键，现在先用 , 试试"
+let mapleader=" "
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+"nnoremap <leader>ev :vsp $MYVIMRC<CR>"
+"nnoremap <leader>sv :source $MYVIMRC<CR>"
+
+nnoremap <Leader>d   :action Debug<CR>
+
+nnoremap <Leader>om :action OverrideMethods<CR>
+
+nnoremap <Leader>r   :action Run<CR>
+nnoremap <Leader>rc :action RunToCursor<CR>
+nnoremap <Leader>rC :action ChooseRunConfiguration<CR>
+nnoremap <Leader>re :action RenameElement<CR>
+nnoremap <Leader>rf :action RenameFile<CR>
+nnoremap <Leader>rr :action Rerun<CR>
+
+nnoremap <Leader>s   :action Stop<CR>
+nnoremap <Leader>su :action ShowUsages<CR>
+nnoremap <Leader>si :action StepInto<CR>
+
+nnoremap <Leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
+
+"快速打开tab
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
+nnoremap <Leader>7 7gt
+nnoremap <Leader>8 8gt
+nnoremap <Leader>9 9gt
+
+
+nnoremap <leader>ga :action GotoAction<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gd :action GotoDeclaration<CR>
+nnoremap <leader>gf :action GotoFile<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>gs :action GotoSymbol<CR>
+noremap <leader>gt :action GotoTest<CR>
+
+
+"quicker window movement   idea中没有用
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+"vim的默认寄存器和系统剪切板共享
+set clipboard+=unnamed
+set history=8126
+set splitbelow
+set splitright
+set showmode
+set incsearch
+set hlsearch
+set chowcmd
+set smartcase
+set ignorecase
+set ruler
+
+
+"插件模拟
+"surround
+set surround
+" multiple-cursors
+set multiple-cursors
+"easyMotion 模拟，额外依赖插件:AceJump,IdeaVim-EasyMotion
+set easymotion
+"注释插件模拟
+set commentary
