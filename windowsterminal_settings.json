@@ -38,7 +38,6 @@
     {
         "defaults": 
         {
-            "adjustIndistinguishableColors": "indexed",
             "backgroundImage": "D:\\Picture\\wallPicture\\redHeart.png",
             "closeOnExit": "graceful",
             "colorScheme": "Gruvbox Dark",
@@ -50,12 +49,13 @@
                 "face": "CaskaydiaCove NF",
                 "size": 12.0
             },
+            "historySize": 9000,
             "useAcrylic": true
         },
         "list": 
         [
             {
-                "backgroundImage": "D:\\Picture\\girlPicture\\quietGril.png",
+                "backgroundImage": "D:\\Picture\\wallPicture\\windows.png",
                 "backgroundImageOpacity": 0.2,
                 "colorScheme": "Gruvbox Dark",
                 "commandline": "pwsh.exe",
@@ -64,33 +64,11 @@
                 "hidden": false,
                 "historySize": 8001,
                 "name": "PowerShell",
-                "opacity": 55,
+                "opacity": 100,
                 "padding": "0, 0, 0, 0",
                 "snapOnInput": true,
                 "startingDirectory": ".",
                 "tabTitle": "Trafalgar"
-            },
-            {
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
-                "name": "Windows PowerShell"
-            },
-            {
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "name": "what is this"
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "hidden": false,
-                "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore"
             },
             {
                 "backgroundImageOpacity": 0.21,
@@ -103,6 +81,18 @@
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl"
             },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "cmd"
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+
             {
                 "guid": "{38326a5c-26ca-54c0-a31b-885074ec63e6}",
                 "hidden": false,
@@ -121,6 +111,7 @@
                 "name": "Git Bash",
                 "source": "Git"
             }
+
         ]
     },
     "schemes": 
@@ -563,6 +554,29 @@
             "yellow": "#B58900"
         },
         {
+            "background": "#241B30",
+            "black": "#241B30",
+            "blue": "#6E29AD",
+            "brightBlack": "#7F7094",
+            "brightBlue": "#AA54F9",
+            "brightCyan": "#00FBFD",
+            "brightGreen": "#0AE4A4",
+            "brightPurple": "#FF00F6",
+            "brightRed": "#E60A70",
+            "brightWhite": "#F2F2E3",
+            "brightYellow": "#F9F972",
+            "cursorColor": "#F2F2E3",
+            "cyan": "#00B0B1",
+            "foreground": "#F2F2E3",
+            "green": "#00986C",
+            "name": "SynthwaveAlpha",
+            "purple": "#B300AD",
+            "red": "#E60A70",
+            "selectionBackground": "#6E29AD",
+            "white": "#B9B1BC",
+            "yellow": "#ADAD3E"
+        },
+        {
             "background": "#000000",
             "black": "#000000",
             "blue": "#3465A4",
@@ -630,6 +644,75 @@
             "selectionBackground": "#FFFFFF",
             "white": "#C0C0C0",
             "yellow": "#808000"
+        },
+        {
+            "background": "#404040",
+            "black": "#000000",
+            "blue": "#4261C5",
+            "brightBlack": "#FEFCFC",
+            "brightBlue": "#7B91D6",
+            "brightCyan": "#5ED1E5",
+            "brightGreen": "#9CC090",
+            "brightPurple": "#F674BA",
+            "brightRed": "#E97071",
+            "brightWhite": "#D8C8BB",
+            "brightYellow": "#DDDA7A",
+            "cursorColor": "#30FF24",
+            "cyan": "#2ABBD4",
+            "foreground": "#AFDAB6",
+            "green": "#39B13A",
+            "name": "WarmNeon",
+            "purple": "#F920FB",
+            "red": "#E24346",
+            "selectionBackground": "#B0AD21",
+            "white": "#D0B8A3",
+            "yellow": "#DAE145"
+        },
+        {
+            "background": "#1F1726",
+            "black": "#000507",
+            "blue": "#883CDC",
+            "brightBlack": "#009CC9",
+            "brightBlue": "#308CBA",
+            "brightCyan": "#FF919D",
+            "brightGreen": "#F4DCA5",
+            "brightPurple": "#AE636B",
+            "brightRed": "#DA6BAC",
+            "brightWhite": "#E4838D",
+            "brightYellow": "#EAC066",
+            "cursorColor": "#DD00FF",
+            "cyan": "#C1B8B7",
+            "foreground": "#DAFAFF",
+            "green": "#2AB250",
+            "name": "WildCherry",
+            "purple": "#ECECEC",
+            "red": "#D94085",
+            "selectionBackground": "#002831",
+            "white": "#FFF8DE",
+            "yellow": "#FFD16F"
+        },
+        {
+            "background": "#2A2139",
+            "black": "#FEFEFE",
+            "blue": "#6D77B3",
+            "brightBlack": "#FEFEFE",
+            "brightBlue": "#36F9F6",
+            "brightCyan": "#F92AAD",
+            "brightGreen": "#72F1B8",
+            "brightPurple": "#E1ACFF",
+            "brightRed": "#F88414",
+            "brightWhite": "#FEFEFE",
+            "brightYellow": "#FFF951",
+            "cursorColor": "#72F1B8",
+            "cyan": "#F772E0",
+            "foreground": "#F0EFF1",
+            "green": "#72F1B8",
+            "name": "synthwave-everything",
+            "purple": "#C792EA",
+            "red": "#F97E72",
+            "selectionBackground": "#181521",
+            "white": "#FEFEFE",
+            "yellow": "#FEDE5D"
         }
     ],
     "themes": []
