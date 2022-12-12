@@ -4,16 +4,21 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = boss_guo
+	name = Trafalgar
 	email = 1148636359g@gmail.com
 [alias]
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	d = difftool
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
 [aliaa]
 	last = log -l HEAD
 [core]
 	quotePath = false
-	editor = nvim-qt
+	editor = nvim
 [gui]
 	encoding = utf-8
 [i18n "commit"]
@@ -23,7 +28,29 @@
 [credential]
 	helper = wincred
 [http]
-	proxy = socks5://127.0.0.1:7890
+	sslBackend = openssl
+	sslcainfo = C:\\Program Files\\Git\\mingw64\\ssl\\cert.pem
+	proxy = socks5h://127.0.0.1:7890
 [https]
-	proxy = socks5://127.0.0.1:7890
+	proxy = socks5h://127.0.0.1:7890
+[safe]
+	directory = C:/Users/guo/AppData/Local/nvim
+	directory = D:/LearnHTML
+	directory = E:/
+	directory = E:/MySettings
+[init]
+	defaultBranch = master
+[diff]
+	tool = winmerge
+[difftool]
+	prompt = false
+	trustExitCode = true
+[difftool "winmerge"]
+    cmd = \"C:/Users/guoya/scoop/apps/winmerge/current/WinMergeU.exe\" -e -u -dl \"Old $BASE\" -dr \"New $BASE\" \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = winmerge
+[mergetool]
+	trustExitCode = true
+[mergetool "winmerge"]
+	cmd = \"C:/Users/guoya/scoop/apps/winmerge/current/WinMergeU.exe\" -e -u -fm -wl -wr -dl \"Local\" -dm \"Base\" -dr \"Remote\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" -o \"$MERGED\"
 
