@@ -1,376 +1,346 @@
 {
+  "git.autofetch": true,
+  "vscode-neovim.neovimExecutablePaths.win32": "E:/Neovim/bin/nvim.exe",
+  //"vscode-neovim.neovimInitVimPaths.win32":"",
+  "guides.enabled": false,
+  "files.autoSave": "afterDelay",
+  "leetcode.nodePath": "node",
+  "editor.tabCompletion": "on",
+  "editor.fontFamily": "Cascadia Code, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "window.enableMenuBarMnemonics": false,
+  "terminal.integrated.fontFamily": "CaskaydiaCove NF",
+  "rhrkbench.rkitorAssociations": {
+    "*.rlynb": "rqpyter.rwtebook.reynb"
+  },
+  "workbench.editorAssociations": {
+    "": ""
+  },
+  "rrrkbench.rtlorCustomizations": {
+    //ry置用户选中代码段的颜色
+    "ruitor.rilectionBackground": "#ro4b24",
+    "rpitor.rzlectionHighlightBackground": "#rx3b13",
+    //rc置活动rvbrb口颜色
+    "rnb.rmtiveBackground": "#rf80629a"
+  },
+  "workbench.colorCustomizations": {
+    //"editor.selectionBackground": "#e78413b7",
 
-    "git.autofetch": true,
-    "vscode-neovim.neovimExecutablePaths.win32":"E:/Neovim/bin/nvim.exe",
-    //"vscode-neovim.neovimInitVimPaths.win32":"",
-    "guides.enabled": false,
-    "files.autoSave": "afterDelay",
-    "leetcode.nodePath": "node",
-    "editor.tabCompletion": "on",
-    "editor.fontFamily": "Cascadia Code, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "window.enableMenuBarMnemonics": false,
-    "terminal.integrated.fontFamily": "CaskaydiaCove NF",
-    "rhrkbench.rkitorAssociations": {
-        "*.rlynb": "rqpyter.rwtebook.reynb"
-    },
-    "workbench.editorAssociations": {
-        "":""
-    },
-     "rrrkbench.rtlorCustomizations": {
- 		//ry置用户选中代码段的颜色
-        "ruitor.rilectionBackground": "#ro4b24",
-        "rpitor.rzlectionHighlightBackground": "#rx3b13",
-        //rc置活动rvbrb口颜色
-        "rnb.rmtiveBackground": "#rf80629a"
-    },
-    "workbench.colorCustomizations": {
-        //"editor.selectionBackground": "#e78413b7",
+    "editor.selectionHighlightBackground": "#d373730e"
+    //"tab.activeBackground": "#ff0000"
+  },
+  /*================= proxy======================*/
+  //"htpp.proxy":"socks5://127.0.0.1.7890",
+  "http.proxySupport": "on",
+  //"http.proxyStrictSSL": true,
+  /*================= start vim configuration===============================*/
 
-        "editor.selectionHighlightBackground": "#d373730e",
-        //"tab.activeBackground": "#ff0000"
-    },
-    /*================= proxy======================*/
-    //"htpp.proxy":"socks5://127.0.0.1.7890",
-    "http.proxySupport": "on",
-    //"http.proxyStrictSSL": true,
-    /*================= start vim configuration===============================*/
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
 
-        "vim.easymotion": true,
-        "vim.useSystemClipboard": true,
-        "vim.incsearch": true,
-        "vim.useCtrlKeys": true,
-        "vim.hlsearch": true,
-        "vim.highlightedyank.enable": true,
-        "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
-         
-        "vim.normalModeKeyBindingsNonRecursive": [
-            {
-                //"before":["<leader>", ""],
-            }
-        ],
-
-        "vim.leader": " ",
-
-        "vim.handleKeys": {
-            "<C-d>": true
-        },
-        
-        "vim.autoSwitchInputMethod.enable": true,
-        "vim.autoSwitchInputMethod.defaultIM": "1033",
-        "vim.autoSwitchInputMethod.obtainIMCmd": "D:/im-select/im-select.exe",
-        "vim.autoSwitchInputMethod.switchIMCmd": "D:/im-select/im-select.exe {im}",
-    /*=================end vim configuration===============================*/
-    /*=================ibart leetcode configuration========================*/
-        "ifetcode.ijdpoint": "i;etcode-oa",
-        "leetcode.endpoint": "leetcode-cn",
-        "leetcode.workspaceFolder": "D:/javaword/leetCode",
-        "leetcode.defaultLanguage": "java",
-        "leetcode.hint.configWebviewMarkdown": false,
-        "leetcode.hint.commentDescription": false,
-        "leetcode.hint.commandShortcut": false,
-    /*================end Leetcode configuration===========================*/
-        "editor.suggestSelection": "first",
-        "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-        
-        // "pdles.pgclude": {
-        //     "**/.phasspath": pkue,
-        //     "**/.ploject": pque,
-        //     "**/.pwttings": peue,
-        //     "**/.prctorypath": ptue
-        // },
-        "files.exclude": {
-            "**/.git": true,
-            "**/.svn": true,
-            "**/.hg": true,
-            "**/CVS": true,
-            "**/.DS_Store": true,
-            "**/.classpath":true,
-            "**/.project": true,
-            "**/.settings":true,
-        },
-        
-
-        "java.configuration.runtimes": [
-             {
-                 "home":"javaSE-8",
-                 "path":"D:/JDK/"
-             }
-        ],
-        //"zaveServer.zsttings.zdnotShowInfoMsg": true,
-        "code-runner.runInTerminal": true,
-        "files.maxMemoryForLargeFilesMB": 4096,
-        "java.saveActions.organizeImports": true,
-        "zorkbench.zponTheme": "zzterial-zxon-zceme",
-        "workbench.colorTheme": "Gruvbox Dark (Medium)",
-
-        /*==================start annotation configuration==================*/
-        // 头部注释
-    
-        "fileheader.customMade": {
-            // xs部注释默认字段
-            "author": "guo yawen",
-            "Date": "do not edit", // 设置后默认设置文件生成时间
-            "lastEditTime": "do not edit", // xi置后，xo存文件更改默认更新最后编辑时间
-            "lastEditors": "guo yawen", // xc置后，xv存文件更改默认更新最后编辑人
-            "description": "",
-            "FilePath": "do not edit", // x;置后，ca认生成文件相对于项目的路径
-            "custom_string_obkoro1": "TrafalgarSX"
-        },
-        //cgto chd ckad clnotation cqack cwst
-        "fileheader.configObj": {
-            "prohibitAutoAdd":["json"],// 禁止 自动添加头部注释
-            "folderBlacklist": [
-                    "node_modules",
-                    "文件夹或文件名禁止自动添加头部注释",
-                     // "cnbpack.cmnfig.cf" // cj以禁止某些文件自动添加注释
-             ]
-        },
-        "C_Cpp.errorSquiggles": "Enabled",
-        
-        /*==================end annotation configuration==================*/
-
-
-        /*=================start better comments=============================*/
-        "better-comments.multilineComments": true,
-        "better-comments.highlightPlainText": false,
-        "better-comments.tags": [
-            {
-                "tag": "!",
-                "color": "#FF2D00",
-                "strikethrough": false,
-                "underline": false,
-                "backgroundColor": "transparent",
-                "bold": false,
-                "italic": false
-            },
-            {
-                "tag": "?",
-                "color": "#3498DB",
-                "strikethrough": false,
-                "underline": false,
-                "backgroundColor": "transparent",
-                "bold": false,
-                "italic": false
-            },
-            {
-                "tag": "//",
-                "color": "#474747",
-                "strikethrough": true,
-                "underline": false,
-                "backgroundColor": "transparent",
-                "bold": false,
-                "italic": false
-            },
-            {
-                "tag": "todo",
-                "color": "#FF8C00",
-                "strikethrough": false,
-                "underline": false,
-                "backgroundColor": "transparent",
-                "bold": false,
-                "italic": false
-            },
-            {
-                "tag": "*",
-                "color": "#98C379",
-                "strikethrough": false,
-                "underline": false,
-                "backgroundColor": "transparent",
-                "bold": false,
-                "italic": false
-            }
-        ],
-        
-            "editor.multiCursorModifier": "ctrlCmd",
-            "cSpell.userWords": [
-                "guo",
-                "yawen",
-                "leetcode",
-                "autowired",
-                "configurer",
-                "servlet"
-            ],
-            "workbench.iconTheme": "material-icon-theme",
-        /*=================end better comments=============================*/
-
- // ======================== LaTeX 配置 BEGIN  ========================
-
-    // bibtex 格式
-    "latex-workshop.bibtex-format.tab": "tab",
-
-    // 自动编译，全部关闭，当且仅当你认为有需要的时候才会去做编译
-    "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
-
-    // 设置 latex-workshop 的 PDF　预览程序，external　指的是外部程序
-    //这里我使用的Pdf预览程序市acrobat，你可以下载SumatraPDF代替
-    "latex-workshop.view.pdf.viewer": "external",
-    "latex-workshop.view.pdf.ref.viewer": "external",
-    "latex-workshop.view.pdf.external.viewer.command": "D:/AcrobatDC/Acrobat/Acrobat.exe",
-    "latex-workshop.view.pdf.external.viewer.args": [
-        "%PDF%"
-    ],
-
-    // 配置正向、反向搜索：.tex -> .pdf
-    "latex-workshop.view.pdf.external.synctex.command": "D:/Acrobat/Acrobat/Acrobat.exe",
-    "latex-workshop.view.pdf.external.synctex.args": [
-        // 正向搜索
-        "-forward-search",
-        "%TEX%",
-        "%LINE%",
-        "-reuse-instance",
-        // 反向搜索
-        "-inverse-search",
-        "\"D:/VScode/VSCode/Code.exe\" \"D:/VScode/VSCode/resources/app/out/cli.js\" -gr %f:%l",
-        "%PDF%"
-    ],
-
-    // 这是一些独立的编译选项，可以作为工具被编译方案调用
-    "latex-workshop.latex.tools": [
-        {
-            // Windows 原生安装 TeX Live 2020 的编译选项
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOCFILE%"
-            ]
-        },
-        {
-            // Windows Biber 编译
-            "name": "Windows Biber",
-            "command": "biber",
-            "args": [
-                "%DOCFILE%"
-            ]
-        },
-         {
-        "name": "bibtex",
-        "command": "bibtex",
-        "args": [
-            "%DOCFILE%"
-        ]
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      //"before":["<leader>", ""],
     }
+  ],
 
-    ],
+  "vim.leader": " ",
 
-    // 这是一些编译方案，会出现在 GUI 菜单里
-    "latex-workshop.latex.recipes": [
-        {
-            // 1.1 Windows 编译简单的小文档，这个选项不太常用，因为绝大多数文章都需要有参考文献索引
-            "name": "Windows XeLaTeX 简单编译",
-            "tools": [
-                "xelatex"
-            ]
-        },
-        {
-            "name": "pdflatex",
-            "tools": [
-                "pdflatex"
-            ]
-        },
-        {
-            // 1.2 Windows 编译带有索引的论文，需要进行四次编译；-> 符号只是一种标记而已，没有程序上的意义
-            "name": "Windows xe->bib->xe->xe 复杂编译",
-            "tools": [
-                "xelatex",
-                "bibtex",
-                "xelatex",
-                "xelatex"
-            ]
-        },
-         {
-            "name": "pdf->bib->pdf->pdf",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        }
-          ],
+  "vim.handleKeys": {
+    "<C-d>": true
+  },
 
-    // 清空中间文件
-    "latex-workshop.latex.clean.fileTypes": [
-        "*.aux",
-        "*.bbl",
-        "*.blg",
-        "*.idx",
-        "*.ind",
-        "*.lof",
-        "*.lot",
-        "*.out",
-        "*.toc",
-        "*.acn",
-        "*.acr",
-        "*.alg",
-        "*.glg",
-        "*.glo",
-        "*.gls",
-        "*.ist",
-        "*.fls",
-        "*.log",
-        "*.fdb_latexmk",
-        "*.bcf",
-        "*.run.xml",
-        "*.synctex.gz"
-    ],
-    "redhat.telemetry.enabled": true,
-    "cmake.configureOnOpen": true,
-    "editor.lineNumbers": "on",
-    "gitlens.advanced.messages": {
-        "suppressLineUncommittedWarning": true
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"c:\\Users\\guo\\.vscode\\extensions\\gabrielbb.vscode-lombok-1.0.1\\server\\lombok.jar\"",
-    "[vue]": {
-        "editor.defaultFormatter": "octref.vetur"
-    },
-    "vetur.format.enable": false,
-    "eslint.format.enable": true,
-    "vetur.validation.script": false,
-// ======================== LaTeX 设置 END ========================
-// ======================== EsLint 格式化代码 =====================
-    "eslint.autoFixOnSave": true, // eslint在保存文件时自动格式化代码
-    "eslint.options": {
-        "extensions": [
-            ".js",
-            ".vue"
-        ]
-    },
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "terminal.integrated.tabs.enabled": true,
-// ======================== EsLint 格式化代码 =====================
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "1033",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "D:/im-select/im-select.exe",
+  "vim.autoSwitchInputMethod.switchIMCmd": "D:/im-select/im-select.exe {im}",
+  /*=================end vim configuration===============================*/
+  /*=================ibart leetcode configuration========================*/
+  "ifetcode.ijdpoint": "i;etcode-oa",
+  "leetcode.endpoint": "leetcode-cn",
+  "leetcode.workspaceFolder": "D:/javaword/leetCode",
+  "leetcode.defaultLanguage": "java",
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.hint.commentDescription": false,
+  "leetcode.hint.commandShortcut": false,
+  /*================end Leetcode configuration===========================*/
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
-    "java.home": "D:\\JDK",
-    "java.codeGeneration.generateComments": true,
-    "java.implementationsCodeLens.enabled": true,
-    "python.defaultInterpreterPath": "D:\\python\\python.exe",
-    "python.linting.pylintArgs": [
-        "--extension-pkg-whitelist=PyQt5"
-    ],
-    "editor.tabSize": 8,
-    "editor.cursorStyle": "line",
-    "editor.insertSpaces": false,
-    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "editor.wordWrap": "off"
+  // "pdles.pgclude": {
+  //     "**/.phasspath": pkue,
+  //     "**/.ploject": pque,
+  //     "**/.pwttings": peue,
+  //     "**/.prctorypath": ptue
+  // },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
 
+  "java.configuration.runtimes": [
+    {
+      "home": "javaSE-8",
+      "path": "D:/JDK/"
+    }
+  ],
+  //"zaveServer.zsttings.zdnotShowInfoMsg": true,
+  "code-runner.runInTerminal": true,
+  "files.maxMemoryForLargeFilesMB": 4096,
+  "java.saveActions.organizeImports": true,
+  "zorkbench.zponTheme": "zzterial-zxon-zceme",
+  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+
+  /*==================start annotation configuration==================*/
+  // 头部注释
+
+  "fileheader.customMade": {
+    // xs部注释默认字段
+    "author": "guo yawen",
+    "Date": "do not edit", // 设置后默认设置文件生成时间
+    "lastEditTime": "do not edit", // xi置后，xo存文件更改默认更新最后编辑时间
+    "lastEditors": "guo yawen", // xc置后，xv存文件更改默认更新最后编辑人
+    "description": "",
+    "FilePath": "do not edit", // x;置后，ca认生成文件相对于项目的路径
+    "custom_string_obkoro1": "TrafalgarSX"
+  },
+  //cgto chd ckad clnotation cqack cwst
+  "fileheader.configObj": {
+    "prohibitAutoAdd": ["json"], // 禁止 自动添加头部注释
+    "folderBlacklist": [
+      "node_modules",
+      "文件夹或文件名禁止自动添加头部注释"
+      // "cnbpack.cmnfig.cf" // cj以禁止某些文件自动添加注释
+    ]
+  },
+  "C_Cpp.errorSquiggles": "Enabled",
+
+  /*==================end annotation configuration==================*/
+
+  /*=================start better comments=============================*/
+  "better-comments.multilineComments": true,
+  "better-comments.highlightPlainText": false,
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+
+  "editor.multiCursorModifier": "ctrlCmd",
+  "cSpell.userWords": [
+    "guo",
+    "yawen",
+    "leetcode",
+    "autowired",
+    "configurer",
+    "servlet"
+  ],
+  "workbench.iconTheme": "material-icon-theme",
+  /*=================end better comments=============================*/
+
+  // ======================== LaTeX 配置 BEGIN  ========================
+
+  // bibtex 格式
+  "latex-workshop.bibtex-format.tab": "tab",
+
+  // 自动编译，全部关闭，当且仅当你认为有需要的时候才会去做编译
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+
+  // 设置 latex-workshop 的 PDF　预览程序，external　指的是外部程序
+  //这里我使用的Pdf预览程序市acrobat，你可以下载SumatraPDF代替
+  "latex-workshop.view.pdf.viewer": "external",
+  "latex-workshop.view.pdf.ref.viewer": "external",
+  "latex-workshop.view.pdf.external.viewer.command": "D:/AcrobatDC/Acrobat/Acrobat.exe",
+  "latex-workshop.view.pdf.external.viewer.args": ["%PDF%"],
+
+  // 配置正向、反向搜索：.tex -> .pdf
+  "latex-workshop.view.pdf.external.synctex.command": "D:/Acrobat/Acrobat/Acrobat.exe",
+  "latex-workshop.view.pdf.external.synctex.args": [
+    // 正向搜索
+    "-forward-search",
+    "%TEX%",
+    "%LINE%",
+    "-reuse-instance",
+    // 反向搜索
+    "-inverse-search",
+    "\"D:/VScode/VSCode/Code.exe\" \"D:/VScode/VSCode/resources/app/out/cli.js\" -gr %f:%l",
+    "%PDF%"
+  ],
+
+  // 这是一些独立的编译选项，可以作为工具被编译方案调用
+  "latex-workshop.latex.tools": [
+    {
+      // Windows 原生安装 TeX Live 2020 的编译选项
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      // Windows Biber 编译
+      "name": "Windows Biber",
+      "command": "biber",
+      "args": ["%DOCFILE%"]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"]
+    }
+  ],
+
+  // 这是一些编译方案，会出现在 GUI 菜单里
+  "latex-workshop.latex.recipes": [
+    {
+      // 1.1 Windows 编译简单的小文档，这个选项不太常用，因为绝大多数文章都需要有参考文献索引
+      "name": "Windows XeLaTeX 简单编译",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "pdflatex",
+      "tools": ["pdflatex"]
+    },
+    {
+      // 1.2 Windows 编译带有索引的论文，需要进行四次编译；-> 符号只是一种标记而已，没有程序上的意义
+      "name": "Windows xe->bib->xe->xe 复杂编译",
+      "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+    },
+    {
+      "name": "pdf->bib->pdf->pdf",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    }
+  ],
+
+  // 清空中间文件
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.bcf",
+    "*.run.xml",
+    "*.synctex.gz"
+  ],
+  "redhat.telemetry.enabled": true,
+  "cmake.configureOnOpen": true,
+  "editor.lineNumbers": "on",
+  "gitlens.advanced.messages": {
+    "suppressLineUncommittedWarning": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"c:\\Users\\guo\\.vscode\\extensions\\gabrielbb.vscode-lombok-1.0.1\\server\\lombok.jar\"",
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "vetur.format.enable": false,
+  "eslint.format.enable": true,
+  "vetur.validation.script": false,
+  // ======================== LaTeX 设置 END ========================
+  // ======================== EsLint 格式化代码 =====================
+  "eslint.autoFixOnSave": true, // eslint在保存文件时自动格式化代码
+  "eslint.options": {
+    "extensions": [".js", ".vue"]
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "terminal.integrated.tabs.enabled": true,
+  // ======================== EsLint 格式化代码 =====================
+
+  "java.home": "D:\\JDK",
+  "java.codeGeneration.generateComments": true,
+  "java.implementationsCodeLens.enabled": true,
+  "python.defaultInterpreterPath": "D:\\python\\python.exe",
+  "python.linting.pylintArgs": ["--extension-pkg-whitelist=PyQt5"],
+  "editor.tabSize": 8,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off"
 }

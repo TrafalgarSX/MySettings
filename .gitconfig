@@ -19,6 +19,7 @@
 [core]
 	quotePath = false
 	editor = nvim
+	packedGitLimit = 512m
 [gui]
 	encoding = utf-8
 [i18n "commit"]
@@ -31,6 +32,7 @@
 	sslBackend = openssl
 	sslcainfo = C:\\Program Files\\Git\\mingw64\\ssl\\cert.pem
 	proxy = socks5h://127.0.0.1:7890
+	postBuffer = 524288000
 [https]
 	proxy = socks5h://127.0.0.1:7890
 [safe]
@@ -40,17 +42,35 @@
 	directory = E:/MySettings
 [init]
 	defaultBranch = master
+
 [diff]
-	tool = winmerge
-[difftool]
-	prompt = false
-	trustExitCode = true
-[difftool "winmerge"]
-    cmd = \"C:/Users/guoya/scoop/apps/winmerge/current/WinMergeU.exe\" -e -u -dl \"Old $BASE\" -dr \"New $BASE\" \"$LOCAL\" \"$REMOTE\"
+  tool = p4merge
 [merge]
-	tool = winmerge
-[mergetool]
-	trustExitCode = true
-[mergetool "winmerge"]
-	cmd = \"C:/Users/guoya/scoop/apps/winmerge/current/WinMergeU.exe\" -e -u -fm -wl -wr -dl \"Local\" -dm \"Base\" -dr \"Remote\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" -o \"$MERGED\"
+  tool = p4merge
+; [mergetool "p4merge"]
+;   path = /Applications/p4merge.app/Contents/Resources/launchp4merge
+
+; [merge]
+; tool = meld
+; [mergetool]
+; prompt = false
+; [mergetool "meld"]
+; trustExitCode = true
+; cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
+; [diff]
+; 	tool = winmerge
+; [difftool]
+; 	prompt = false
+; 	trustExitCode = true
+; [difftool "winmerge"]
+;     cmd = \"C:/Users/guoya/scoop/apps/winmerge/current/WinMergeU.exe\" -e -u -dl \"Old $BASE\" -dr \"New $BASE\" \"$LOCAL\" \"$REMOTE\"
+
+
+; [merge]
+; 	tool = winmerge
+; [mergetool]
+; 	trustExitCode = true
+; [mergetool "winmerge"]
+; 	cmd = \"C:/Users/guoya/scoop/apps/winmerge/current/WinMergeU.exe\" -e -u -fm -wl -wr -dl \"Local\" -dm \"Base\" -dr \"Remote\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" -o \"$MERGED\"
 
