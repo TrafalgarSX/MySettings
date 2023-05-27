@@ -84,43 +84,44 @@ list(APPEND EXTRA_INCLUDE  "${PROJECT_SOURCE_DIR}/include" # 本工程的头文�
                            "${MY_DEV_LIB_PATH}/include" # 第三方库的头文件
                            )
 
-# 根据编译器的不同，设置不同的编译选项和依赖库
-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
-  message("mingw")
-  list(APPEND EXTRA_LIB_PATH "${MY_DEV_LIB_PATH}/unixlib")
-  list(APPEND EXTRA_LIB libgtest.a libcurl.dll pthread )
-  # list(APPEND EXTRA_DEFINES "_LOG_")
-  list(APPEND EXTRA_COMPILE_FLAGS "-Wall")
-
-elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  message("clang")
-elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-  message("msvc")
-  # set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
-  set(CMAKE_TOOLCHAIN_FILE "D:/workspace/dev/vcpkg/scripts/buildsystems/vcpkg.cmake")
-  set(CMAKE_PREFIX_PATH "D:/workspace/dev/vcpkg/installed/${BUILD_BIT}-windows")
-
-  # 第三方库的头文件（vcpkg安装的）
-  list(APPEND EXTRA_INCLUDE "${CMAKE_PREFIX_PATH}/include")
-  # 第三方库的路径（vcpkg安装的）
-  list(APPEND EXTRA_LIB_PATH "${CMAKE_PREFIX_PATH}/lib")
-  # 自己编译的库的路径(msvc编译器)
-  list(APPEND EXTRA_LIB_PATH "${MY_DEV_LIB_PATH}/msvclib")
-
-  # list(APPEND EXTRA_DEFINES "_LOG_")
-  list(APPEND EXTRA_COMPILE_FLAGS "/utf-8")
-
-  # 动态库
-  find_package(CURL CONFIG REQUIRED)
-
-  list(APPEND EXTRA_LIB CURL::libcurl pthreadVC3.lib)
-  # 找不到dll时，这样设置就不会提示找不到dll，程序可以正常运行
-  set_target_properties(gtest_test PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_PREFIX_PATH}/debug/bin")
-endif()
-
-#link lib 后面应该完善，操作系统和编译器组合判断
+#link lib 操作系统和编译器组合判断, 不同平台不同编译器的不同处理
+# 增强CMakeLists.txt的兼容性
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   message("windows")
+  # 根据编译器的不同，设置不同的编译选项和依赖库
+  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    message("mingw")
+    list(APPEND EXTRA_LIB_PATH "${MY_DEV_LIB_PATH}/unixlib")
+    list(APPEND EXTRA_LIB libgtest.a libcurl.dll pthread )
+    # list(APPEND EXTRA_DEFINES "_LOG_")
+    list(APPEND EXTRA_COMPILE_FLAGS "-Wall")
+
+  elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    message("clang")
+  elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    message("msvc")
+    # set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
+    set(CMAKE_TOOLCHAIN_FILE "D:/workspace/dev/vcpkg/scripts/buildsystems/vcpkg.cmake")
+    set(CMAKE_PREFIX_PATH "D:/workspace/dev/vcpkg/installed/${BUILD_BIT}-windows")
+
+    # 第三方库的头文件（vcpkg安装的）
+    list(APPEND EXTRA_INCLUDE "${CMAKE_PREFIX_PATH}/include")
+    # 第三方库的路径（vcpkg安装的）
+    list(APPEND EXTRA_LIB_PATH "${CMAKE_PREFIX_PATH}/lib")
+    # 自己编译的库的路径(msvc编译器)
+    list(APPEND EXTRA_LIB_PATH "${MY_DEV_LIB_PATH}/msvclib")
+
+    # list(APPEND EXTRA_DEFINES "_LOG_")
+    list(APPEND EXTRA_COMPILE_FLAGS "/utf-8")
+
+    # 动态库
+    find_package(CURL CONFIG REQUIRED)
+
+    list(APPEND EXTRA_LIB CURL::libcurl pthreadVC3.lib)
+    # 找不到dll时，这样设置就不会提示找不到dll，程序可以正常运行
+    set_target_properties(gtest_test PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_PREFIX_PATH}/debug/bin")
+  endif()
+
 elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   message("unix")
 elseif(${CMAKE_SYSTEM_NAME} MATCHES "Android")
