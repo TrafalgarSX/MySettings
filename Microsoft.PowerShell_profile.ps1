@@ -82,3 +82,8 @@ function msvc_run{
   $env:PATH+=";${prefix}\debug\bin"
 }
 
+function msvc_compile{
+  $prefix="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1"
+  &$prefix -Arch amd64 -HostArch amd64
+  # &$prefix amd64 -vcvars_ver="14.35.32215" "10.0.22000.0"
+}
