@@ -84,6 +84,8 @@ list(APPEND EXTRA_INCLUDE  "${PROJECT_SOURCE_DIR}/include" # 本工程的头文�
                            "${MY_DEV_LIB_PATH}/include" # 第三方库的头文件
                            )
 
+list(APPEND EXTRA_SRC "${PROJECT_SOURCE_DIR}/lock_test.cpp")
+
 #link lib 操作系统和编译器组合判断, 不同平台不同编译器的不同处理
 # 增强CMakeLists.txt的兼容性
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
@@ -140,7 +142,7 @@ target_link_directories(gtest_test PUBLIC ${EXTRA_LIB_PATH})
 # 第三方库
 target_link_libraries(gtest_test PUBLIC ${EXTRA_LIB} )
 # 源文件
-target_sources(gtest_test PUBLIC lock_test.cpp)
+target_sources(gtest_test PUBLIC ${EXTRA_SRC})
 
 
 # backup for sometime use
