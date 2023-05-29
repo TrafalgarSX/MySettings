@@ -34,8 +34,12 @@ Set-Alias  vi nvim-qt
 
 Set-Alias android_clang C:/Users/guoya/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android29-clang
 Set-Alias android_clang++ C:/Users/guoya/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android29-clang++
-
+Set-Alias msvc_cl "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\cl.exe"
 Set-Alias rename Rename-Item
+
+Invoke-Expression (& { (lua D:/workspace/lua/z.lua/z.lua --init powershell) -join "`n" })
+
+Set-Alias zb  "z -b"
 
 #设置socks5代理
 function set_proxy {
@@ -76,11 +80,24 @@ function android_run($exec){
   adb shell /data/local/tmp/"$exec"
 }
 
+$path_backup = $env:PATH
+
+function mingw_run{
+  $env:PATH+=";D:\workspace\dev\unixlib"
+}
+
 function msvc_run{
   $prefix="D:\workspace\dev\vcpkg\installed\x64-windows"
   $env:PATH+=";${prefix}\bin"
   $env:PATH+=";${prefix}\debug\bin"
+  $env:PATH+=";D:\workspace\dev\msvclib"
 }
+
+function path_backup{
+  $env:PATH=$path_backup
+}
+
+msvc_run
 
 function msvc_compile{
   $prefix="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1"
