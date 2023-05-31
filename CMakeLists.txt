@@ -121,7 +121,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     list(APPEND EXTRA_LIB_PATH "${MY_DEV_LIB_PATH}/msvclib")
 
     # list(APPEND EXTRA_DEFINES "_LOG_")
-    list(APPEND EXTRA_COMPILE_FLAGS "/utf-8;$<IF:$<CONFIG:Debug>,MTd,MT>")
+    list(APPEND EXTRA_COMPILE_FLAGS "/$<IF:$<CONFIG:Debug>,MTd,MT>")
 
     # 动态库
     find_package(CURL CONFIG REQUIRED)
