@@ -68,12 +68,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
   # set(CMAKE_CXX_FLAGS_DEBUG          "${CMAKE_CXX_FLAGS_DEBUG} /D_DEBUG /MTd /Zi /Ob0 /Od /RTC1")
   # set(CMAKE_CXX_FLAGS_RELEASE        "${CMAKE_CXX_FLAGS_RELEASE} /MT /O2 /Ob2 /D NDEBUG")
   
-  set_property(TARGET ${PROJECT_NAME} PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
-# 可执行文件后缀
-  set_target_properties(${TARGET_NAME} PROPERTIES DEBUG_POSTFIX "d")
-# 库文件后缀
-  set(CMAKE_DEBUG_POSTFIX "d")
-
+  # set_property(TARGET ${PROJECT_NAME} PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 endif()
 
 # 通用宏定义
@@ -126,7 +121,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     list(APPEND EXTRA_LIB_PATH "${MY_DEV_LIB_PATH}/msvclib")
 
     # list(APPEND EXTRA_DEFINES "_LOG_")
-    list(APPEND EXTRA_COMPILE_FLAGS "/utf-8")
+    list(APPEND EXTRA_COMPILE_FLAGS "/utf-8;$<IF:$<CONFIG:Debug>,MTd,MT>")
 
     # 动态库
     find_package(CURL CONFIG REQUIRED)
@@ -188,4 +183,10 @@ add_test(NAME en COMMAND gflags_test --languages="chinese")
 # target_link_options(32bit-build INTERFACE -m32)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
 # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32")
+
+# 可执行文件后缀
+  # set_target_properties(${TARGET_NAME} PROPERTIES DEBUG_POSTFIX "d")
+# 库文件后缀
+  # set(CMAKE_DEBUG_POSTFIX "d")
+
 
