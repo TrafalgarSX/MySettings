@@ -36,10 +36,11 @@ Set-Alias android_clang C:/Users/guoya/AppData/Local/Android/Sdk/ndk/25.1.893739
 Set-Alias android_clang++ C:/Users/guoya/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android29-clang++
 Set-Alias msvc_cl "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\cl.exe"
 Set-Alias rename Rename-Item
+Set-Alias nt nvim-qt
 
-Invoke-Expression (& { (lua D:/workspace/lua/z.lua/z.lua --init powershell) -join "`n" })
-
-Set-Alias zb  "z -b"
+# Invoke-Expression (& { (lua D:/workspace/lua/z.lua/z.lua --init powershell) -join "`n" })
+# Set-Alias zb "z -b"
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
 #设置socks5代理
 function set_proxy {
@@ -82,19 +83,30 @@ function android_run($exec){
 
 $path_backup = $env:PATH
 
+function path_backup{
+  $env:PATH=$path_backup
+}
+
 function mingw_run{
+  path_backup
   $env:PATH+=";D:\workspace\dev\unixlib"
 }
 
+# 添加环境变量可以让执行程序时自动检测DLL
 function msvc_run{
+  path_backup
   $prefix="D:\workspace\dev\vcpkg\installed\x64-windows"
   $env:PATH+=";${prefix}\bin"
   $env:PATH+=";${prefix}\debug\bin"
-  $env:PATH+=";D:\workspace\dev\msvclib"
 }
 
-function path_backup{
-  $env:PATH=$path_backup
+# 静态库版本路径, 这样设置,当编译其他库自动检测依赖就可以选择vcpkg使用静态库还是动态库了
+function msvc_runs{
+  path_backup
+  $env:PATH+=";D:\workspace\dev\msvclib" # 这里面放的是我自己编译的msvc静态库
+  $prefix="D:\workspace\dev\vcpkg\installed\x64-windows-static"
+  $env:PATH+=";${prefix}\lib"
+  $env:PATH+=";${prefix}\debug\lib"
 }
 
 msvc_run
@@ -104,3 +116,32 @@ function msvc_compile{
   &$prefix -Arch amd64 -HostArch amd64
   # &$prefix amd64 -vcvars_ver="14.35.32215" "10.0.22000.0"
 }
+
+function gdbtool($exec)
+{ 
+  write-host $exec
+  emacs --eval "(gdb `"gdb  -i=mi $exec`")"
+}
+
+function gdbtoolnw($exec)
+{ 
+  write-host $exec
+  emacs -nw --eval "(gdb `"gdb  -i=mi $exec`")"
+}
+
+function ghelp{
+  write-host "set_proxy"
+  write-host "unset_proxy"
+  write-host "set_httpproxy"
+  write-host "set_pwsh"
+  write-host "android_prun"
+  write-host "android_run"
+  write-host "path_backup"
+  write-host "mingw_run"
+  write-host "msvc_run"
+  write-host "msvc_runs"
+  write-host "msvc_compile"
+  write-host "gdbtool"
+  write-host "gdbtoolnw"
+}
+
