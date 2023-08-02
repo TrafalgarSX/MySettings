@@ -18,8 +18,9 @@
 	last = log -l HEAD
 [core]
 	quotePath = false
-	editor = nvim
+	editor = gvim
 	packedGitLimit = 512m
+	autocrlf = true
 [gui]
 	encoding = utf-8
 [i18n "commit"]
@@ -40,13 +41,26 @@
 	directory = D:/LearnHTML
 	directory = E:/
 	directory = E:/MySettings
+	directory = E:/MySettings/.git
 [init]
 	defaultBranch = master
 
-[diff]
-  tool = p4merge
 [merge]
-  tool = p4merge
+    tool = kdiff3
+[mergetool "kdiff3"]
+    cmd = "C:/Users/guoya/scoop/shims/kdiff3.exe" $BASE $LOCAL $REMOTE -o $MERGED --L1 base --L2 local --L3 remote
+	trustExitCode = false
+[diff]
+	guitool = kdiff3
+	tool = kdiff3
+[difftool "kdiff3"]
+	cmd = "C:/Users/guoya/scoop/shims/kdiff3.exe" $LOCAL $REMOTE --L1 local --L2 remote
+[difftool]
+	prompt = false
+; [diff]
+;   tool = p4merge
+; [merge]
+;   tool = p4merge
 ; [mergetool "p4merge"]
 ;   path = /Applications/p4merge.app/Contents/Resources/launchp4merge
 
@@ -67,10 +81,10 @@
 ;     cmd = \"C:/Users/guoya/scoop/apps/winmerge/current/WinMergeU.exe\" -e -u -dl \"Old $BASE\" -dr \"New $BASE\" \"$LOCAL\" \"$REMOTE\"
 
 
-; [merge]
-; 	tool = winmerge
-; [mergetool]
-; 	trustExitCode = true
-; [mergetool "winmerge"]
-; 	cmd = \"C:/Users/guoya/scoop/apps/winmerge/current/WinMergeU.exe\" -e -u -fm -wl -wr -dl \"Local\" -dm \"Base\" -dr \"Remote\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" -o \"$MERGED\"
-
+[difftool "sourcetree"]
+	cmd = "'' "
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[log]
+	d
