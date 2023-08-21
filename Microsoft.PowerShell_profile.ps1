@@ -19,9 +19,6 @@ Set-PSReadlineKeyHandler -Key "Ctrl+z" -Function Undo
 Set-PSReadlineKeyHandler -Key UpArrow  -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
-# Set-PSReadlineKeyHandler -Key "Ctrl+a" -Function BeginningOfLine 
-# Set-PSReadlineKeyHandler -Key "Ctrl+e" -Function EndOfLine 
-
 Set-PSReadLineOption -EditMode Emacs
 # vi模式不好用 没有光标转换
 # Set-PSReadLineOption -EditMode Vi
@@ -30,29 +27,32 @@ Set-PSReadLineOption -EditMode Emacs
 #nvim中总是不支持 pysocks不知道为什么
 $env:all_proxy="socks5://127.0.0.1:7890"
 $env:NDK = "C:\Users\guoya\AppData\Local\Android\Sdk\ndk\25.1.8937393"
-Set-Alias  vi nvim-qt
 
+# Invoke-Expression (& { (lua D:/workspace/lua/z.lua/z.lua --init powershell) -join "`n" })
+# Set-Alias zb "z -b"
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+
+Set-Alias  vi nvim-qt
 Set-Alias android_clang C:/Users/guoya/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android29-clang
 Set-Alias android_clang++ C:/Users/guoya/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android29-clang++
 Set-Alias msvc_cl "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\cl.exe"
 Set-Alias rename Rename-Item
 Set-Alias nt nvim-qt
 
-# Invoke-Expression (& { (lua D:/workspace/lua/z.lua/z.lua --init powershell) -join "`n" })
-# Set-Alias zb "z -b"
-Invoke-Expression (& { (zoxide init powershell | Out-String) })
-
 #设置socks5代理
 function set_proxy {
-  $env:http_proxy="" 
-  $env:https_proxy=""   
+  $env:http_proxy=""
+  $env:https_proxy=""  
   $env:all_proxy="socks5h://127.0.0.1:7890"
+  # print suc
+  echo "set socks5h proxy success"
 }
 #unset proxy
 function unset_proxy{
-  $env:http_proxy="" 
-  $env:https_proxy="" 
+  $env:http_proxy=""
+  $env:https_proxy=""
   $env:all_proxy=""
+  echo "unset proxy success"
  }
 
  #设置http,https代理
@@ -60,7 +60,7 @@ function unset_proxy{
   $env:all_proxy=""
   $env:http_proxy="http://127.0.0.1:7890" 
   $env:https_proxy="https://127.0.0.1:7890" 
-
+  echo "set http proxy success"
 }
 
 function set_pwsh{
