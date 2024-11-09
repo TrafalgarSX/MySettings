@@ -1,4 +1,3 @@
-
 #set encoding
 $OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
 
@@ -7,7 +6,8 @@ Import-Module posh-git
 Import-Module PSReadLine
 # Import-Module on-my-posh
 #设置theme
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/powerlevel10k_classic.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/powerlevel10k_classic.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/amro.omp.json" | Invoke-Expression
 # 放在前面不起作用, 应该适合DirColors冲突了
 # 功能是给文件夹和文件加图标和上色
 Import-Module -Name Terminal-Icons
@@ -25,7 +25,7 @@ Set-PSReadLineOption -EditMode Emacs
 # Set-PSReadlineOption -ViModeIndicator Cursor
 
 #nvim中总是不支持 pysocks不知道为什么
-$env:all_proxy="socks5://127.0.0.1:7890"
+# $env:all_proxy="socks5://127.0.0.1:7890"
 $env:NDK = "C:\Users\guoya\AppData\Local\Android\Sdk\ndk\25.1.8937393"
 
 # Invoke-Expression (& { (lua D:/workspace/lua/z.lua/z.lua --init powershell) -join "`n" })
@@ -38,6 +38,7 @@ Set-Alias android_clang++ C:/Users/guoya/AppData/Local/Android/Sdk/ndk/25.1.8937
 Set-Alias msvc_cl "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\cl.exe"
 Set-Alias rename Rename-Item
 Set-Alias nt nvim-qt
+
 
 #设置socks5代理
 function set_proxy {
@@ -59,7 +60,7 @@ function unset_proxy{
  function set_httpproxy{
   $env:all_proxy=""
   $env:http_proxy="http://127.0.0.1:7890" 
-  $env:https_proxy="https://127.0.0.1:7890" 
+  $env:https_proxy="http://127.0.0.1:7890" 
   echo "set http proxy success"
 }
 
@@ -109,8 +110,6 @@ function msvc_runs{
   $env:PATH+=";${prefix}\debug\lib"
 }
 
-msvc_run
-
 function msvc_compile{
   $prefix="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1"
   &$prefix -Arch amd64 -HostArch amd64
@@ -129,6 +128,13 @@ function gdbtoolnw($exec)
   emacs -nw --eval "(gdb `"gdb  -i=mi $exec`")"
 }
 
+function shit
+{
+  inshellisense --shell powershell
+}
+
+function Invoke-Combine { [System.IO.FileInfo] [System.IO.Path]::Combine.Invoke($args) }
+
 function ghelp{
   write-host "set_proxy"
   write-host "unset_proxy"
@@ -143,5 +149,10 @@ function ghelp{
   write-host "msvc_compile"
   write-host "gdbtool"
   write-host "gdbtoolnw"
+  write-host "shit (inshellisense)"
+  write-host "ghcs"
 }
 
+# msvc_run
+set_httpproxy
+. "C:\Users\guoya\Documents\PowerShell\gh-copilot.ps1"

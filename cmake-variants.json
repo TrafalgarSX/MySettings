@@ -1,0 +1,63 @@
+{
+    "buildType": {
+        "default": "debug",
+        "description": "The build type.",
+        "choices": {
+            "debug": {
+                "short": "Debug",
+                "long": "Disable optimizations - include debug information.",
+                "buildType": "Debug"
+            },
+            "release": {
+                "short": "Release",
+                "long": "Optimize for speed - exclude debug information.",
+                "buildType": "Release"
+            },
+            "minsize": {
+                "short": "MinSizeRel",
+                "long": "Optimize for smallest binary size - exclude debug information.",
+                "buildType": "MinSizeRel"
+            },
+            "reldeb": {
+                "short": "RelWithDebInfo",
+                "long": "Optimize for speed - include debug information.",
+                "buildType": "RelWithDebInfo"
+            }
+        }
+    },
+    "platform": {
+        "default": "common",
+        "description": "different platform settings",
+        "choices": {
+            "common": {
+                "short": "common",
+                "long": "windows linux macosx paltform settings",
+                "settings": {
+                    "CMAKE_BUILD_TYPE": "${buildType}"
+                }
+            },
+            "armeabi-v7a": {
+                "short": "armv7",
+                "long": "android for armeabi-v7a",
+                "settings": {
+                    "CMAKE_SYSTEM_NAME": "Android",
+                    "ANDROID_TOOLCHAIN": "clang",
+                    "ANDROID_ABI": "armeabi-v7a",
+                    "ANDROID_NATIVE_API_LEVEL": "21",
+                    "ANDROID_STL": "c++_shared"
+                }
+            },
+            "arm64-v8a": {
+                "short": "arm64",
+                "long": "android for arm64-v8a",
+                "settings": {
+                    "CMAKE_SYSTEM_NAME": "Android",
+                    "ANDROID_TOOLCHAIN": "clang",
+                    "ANDROID_ABI": "arm64-v8a",
+                    "ANDROID_NATIVE_API_LEVEL": "21",
+                    "ANDROID_STL": "c++_shared"
+                }
+            }
+        }
+    }
+}
