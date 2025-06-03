@@ -4,8 +4,8 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Trafalgar
-	email = 1148636359g@gmail.com
+	name = trafalgar
+	email = guoyawen98@gmail.com
 [alias]
 	unstage = reset HEAD --
 	last = log -1 HEAD
@@ -16,11 +16,6 @@
 	st = status
 [aliaa]
 	last = log -l HEAD
-[core]
-	quotePath = false
-	editor = gvim
-	packedGitLimit = 512m
-	autocrlf = true
 [gui]
 	encoding = utf-8
 [i18n "commit"]
@@ -30,40 +25,26 @@
 [credential]
 	helper = wincred
 [http]
-	sslBackend = openssl
-	sslcainfo = C:\\Program Files\\Git\\mingw64\\ssl\\cert.pem
-	proxy = socks5h://127.0.0.1:7890
+	;sslBackend = openssl
+	;sslcainfo = C:\\Program Files\\Git\\mingw64\\ssl\\cert.pem
+	proxy = http://127.0.0.1:7890
 	postBuffer = 524288000
 [https]
-	proxy = socks5h://127.0.0.1:7890
+	proxy = http://127.0.0.1:7890
 [safe]
 	directory = C:/Users/guo/AppData/Local/nvim
-	directory = D:/LearnHTML
-	directory = E:/
-	directory = E:/MySettings
-	directory = E:/MySettings/.git
-[init]
-	defaultBranch = master
+	directory = c:/workspace/obsidian
+	directory = C:\\workspace\\obsidian\\ProgramKnowledge\\
+	directory = *
 
-[merge]
-    tool = kdiff3
 [mergetool "kdiff3"]
     cmd = "C:/Users/guoya/scoop/shims/kdiff3.exe" $BASE $LOCAL $REMOTE -o $MERGED --L1 base --L2 local --L3 remote
 	trustExitCode = false
-[diff]
-	guitool = kdiff3
-	tool = kdiff3
+
 [difftool "kdiff3"]
 	cmd = "C:/Users/guoya/scoop/shims/kdiff3.exe" $LOCAL $REMOTE --L1 local --L2 remote
 [difftool]
 	prompt = false
-; [diff]
-;   tool = p4merge
-; [merge]
-;   tool = p4merge
-; [mergetool "p4merge"]
-;   path = /Applications/p4merge.app/Contents/Resources/launchp4merge
-
 ; [merge]
 ; tool = meld
 ; [mergetool]
@@ -72,19 +53,72 @@
 ; trustExitCode = true
 ; cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 
-; [diff]
-; 	tool = winmerge
-; [difftool]
-; 	prompt = false
-; 	trustExitCode = true
-; [difftool "winmerge"]
-;     cmd = \"C:/Users/guoya/scoop/apps/winmerge/current/WinMergeU.exe\" -e -u -dl \"Old $BASE\" -dr \"New $BASE\" \"$LOCAL\" \"$REMOTE\"
-
-
 [difftool "sourcetree"]
 	cmd = "'' "
 [mergetool "sourcetree"]
 	cmd = "'' "
 	trustExitCode = true
 [log]
-	d
+	date = iso
+[advice]
+	ignoredStash = true
+[credential "helperselector"]
+	selected = manager
+[credential "https://chrome-internal.googlesource.com"]
+	provider = generic
+
+[column]
+        ui = auto
+[branch]
+        sort = -committerdate
+[tag]
+        sort = version:refname
+[init]
+        defaultBranch = master
+
+[diff]
+        guitool = kdiff3
+        tool = kdiff3
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+[push]
+        default = simple
+        autoSetupRemote = true
+        followTags = true
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+
+# why the hell not?
+
+[help]
+        autocorrect = prompt
+[commit]
+        verbose = true
+[rerere]
+        enabled = true
+        autoupdate = true
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
+
+# a matter of taste (uncomment if you dare)
+
+[core]
+         fsmonitor = true
+         untrackedCache = true
+         quotePath = false
+         editor = gvim
+         packedGitLimit = 512m
+         autocrlf = true
+[merge]
+        # (just 'diff3' if git version < 2.3)
+        conflictstyle = zdiff3 
+        tool = kdiff3
+        ff = false
+[pull]
+        rebase = true
